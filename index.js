@@ -1,26 +1,20 @@
 const Button = (props) => {
     //  Write your code here.
-    const { mainHeading, likeButton, commentButton, shareButton } = props;
-    return (
-      <div className="bg">
-        <h1 className="mainHeading">{mainHeading}</h1>
-        <div className="buttonContainer">
-          <button className="likeBtn btnAll">{likeButton}</button>
-          <button className="commentBtn btnAll">{commentButton}</button>
-          <button className="shareBtn btnAll">{shareButton}</button>
-        </div>
-      </div>
-    );
+    const { classNaming, buttonDescription } = props;
+    console.log(props);
+    return <button className={classNaming}>{buttonDescription}</button>;
   };
   
   const element = (
     //  Write your code here.
-    <Button
-      mainHeading="Social Buttons"
-      likeButton="Like"
-      commentButton="Comment"
-      shareButton="Share"
-    />
+    <div className="bg">
+      <h1 className="mainHeading">Social Buttons</h1>
+      <div className="buttonContainer">
+        <Button classNaming="likeBtn btnAll" buttonDescription="Like" />
+        <Button classNaming="commentBtn btnAll" buttonDescription="Comment" />
+        <Button classNaming="shareBtn btnAll" buttonDescription="Share" />
+      </div>
+    </div>
   );
   
   ReactDOM.render(element, document.getElementById("root"));
